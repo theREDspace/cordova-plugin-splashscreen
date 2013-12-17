@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="org.apache.cordova.splashscreen"
+           id="org.redspace.cordova.splashscreen"
       version="0.2.5">
     <name>Splashscreen</name>
-    <description>Cordova Splashscreen Plugin</description>
+    <description>Cordova RedSpace Splashscreen Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,splashscreen</keywords>
-    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-splashscreen.git</repo>
+    <repo>https://github.com/theREDspace/cordova-plugin-splashscreen.git</repo>
     <issue>https://issues.apache.org/jira/browse/CB/component/12320653</issue>
 
 
@@ -19,24 +19,24 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SplashScreen">
-            <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
+            <param name="android-package" value="org.redspace.cordova.splashscreen.SplashScreen"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/SplashScreen.java" target-dir="src/org/apache/cordova/splashscreen" />
+        <source-file src="src/android/SplashScreen.java" target-dir="src/org/redspace/cordova/splashscreen" />
     </platform>
 
     <!-- amazon-fireos -->
     <platform name="amazon-fireos">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="SplashScreen">
-            <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen"/>
+            <param name="android-package" value="org.redspace.cordova.splashscreen.SplashScreen"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/SplashScreen.java" target-dir="src/org/apache/cordova/splashscreen" />
+        <source-file src="src/android/SplashScreen.java" target-dir="src/org/redspace/cordova/splashscreen" />
     </platform>
-    
+
     <!-- ubuntu -->
     <platform name="ubuntu">
         <header-file src="src/ubuntu/splashscreen.h" />
@@ -54,7 +54,7 @@
 
 	    <header-file src="src/ios/CDVSplashScreen.h" />
 	    <source-file src="src/ios/CDVSplashScreen.m" />
-	    
+
 	    <framework src="CoreGraphics.framework" />
     </platform>
 

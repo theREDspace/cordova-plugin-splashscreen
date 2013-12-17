@@ -1,3 +1,8 @@
+RedSpace Splashscreen Plugin
+----------------------------
+
+Allow developers to access the filename being used by the splashscreen for use in another location.
+
 cordova-plugin-splashscreen
 ----------------------------
 
@@ -9,7 +14,7 @@ In your config.xml, you need to add the following preference
 
 Where foo is the name of the splashscreen file. Preferably a 9 patch file. Make sure to add your splashcreen files to your res/xml directory under the appropriate folders.
 
-For Android, you also have to edit your projects main java file. You must add a second parameter representing a time delay to your super.loadUrl. 
+For Android, you also have to edit your projects main java file. You must add a second parameter representing a time delay to your super.loadUrl.
 
 `super.loadUrl(Config.getStartUrl(), 10000);`
 

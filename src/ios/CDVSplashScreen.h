@@ -29,5 +29,6 @@
 
 - (void)show:(CDVInvokedUrlCommand*)command;
 - (void)hide:(CDVInvokedUrlCommand*)command;
+- (void)getImageName:(CDVInvokedUrlCommand*)command;
 
 @end

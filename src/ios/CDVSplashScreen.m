@@ -40,6 +40,16 @@
     [self setVisible:NO];
 }
 
+// LUKE'S FUNCTION
+- (void)getImageName:(CDVInvokedUrlCommand*)command {
+    // Create Plugin Result
+    CDVPluginResult * pluginResult = [ CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:_curImageName ];
+    
+    NSLog(@"GOT HERE: %@", _curImageName);
+    
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)pageDidLoad
 {
     id autoHideSplashScreenValue = [self.commandDelegate.settings objectForKey:[@"AutoHideSplashScreen" lowercaseString]];
@@ -131,7 +141,7 @@
 
     if (CDV_IsIPhone5()) {
         imageName = [imageName stringByAppendingString:@"-568h"];
-    } else if (CDV_IsIPad()) {
+    } // else if (CDV_IsIPad()) {
         switch (orientation) {
             case UIInterfaceOrientationLandscapeLeft:
             case UIInterfaceOrientationLandscapeRight:
@@ -144,14 +154,14 @@
                 imageName = [imageName stringByAppendingString:@"-Portrait"];
                 break;
         }
-    }
+    // }
 
     if (![imageName isEqualToString:_curImageName]) {
         UIImage* img = [UIImage imageNamed:imageName];
         _imageView.image = img;
         _curImageName = imageName;
     }
-
+    
     // Check that splash screen's image exists before updating bounds
     if (_imageView.image) {
         [self updateBounds];

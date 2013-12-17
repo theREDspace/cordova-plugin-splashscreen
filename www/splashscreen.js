@@ -1,4 +1,4 @@
-/*
+cordova.define("org.apache.cordova.splashscreen.SplashScreen", function(require, exports, module) {/*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -27,7 +27,17 @@ var splashscreen = {
     },
     hide:function() {
         exec(null, null, "SplashScreen", "hide", []);
+    },
+    getImageName:function(cb) {
+        exec(cb, splashscreen.gotImageNameError, "SplashScreen", "getImageName", []);
+    },
+    gotImageName:function(data) {
+        splashscreen.imageName = data;
+    },
+    gotImageNameError:function(err) {
+        console.log(err);
     }
 };
 
 module.exports = splashscreen;
+});
