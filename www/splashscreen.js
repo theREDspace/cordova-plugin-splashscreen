@@ -29,10 +29,18 @@ var splashscreen = {
         exec(null, null, "SplashScreen", "hide", []);
     },
     getImageName:function(cb) {
+      // Since Android does voodo magic inside this plugin, we're only calling
+      // native functionality on iOS, if we're on Android we just return
+      // the splash image file.
+      // TODO: convert splash.jpg into an Android "nine patch" image.
+      if (window.device &&
+          window.device.platform &&
+          window.device.platform.toLowerCase() === 'ios') {
         exec(cb, splashscreen.gotImageNameError, "SplashScreen", "getImageName", []);
-    },
-    gotImageName:function(data) {
-        splashscreen.imageName = data;
+
+      } else {
+        return cb('/drawable/splash.jpg');
+      }
     },
     gotImageNameError:function(err) {
         console.log(err);
